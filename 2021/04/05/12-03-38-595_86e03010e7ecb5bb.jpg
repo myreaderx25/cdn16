@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml">
+<head>
+<title>Living on Earth: Public Radio's Environmental News Magazine</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width">
+<link href="/style.css" rel="stylesheet" type="text/css" />
+<link media="screen" rel="stylesheet" href="/colorbox.css" />
+<script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript" src="/js/jquery-1.3.2.min.js"></script>
+<script type="text/javascript" src="/js/jquery.cycle.all.min.js"></script>
+<script type="text/javascript" src="/js/jquery.color.js"></script>
+<script type="text/javascript" src="/js/jquery.colorbox-min.js"></script>
+<script type="text/javascript" charset="utf-8">
+// <![CDATA[
+$(document).ready(function(){
+	$('div.blog').hover(
+	  function(){
+		$(this).stop().animate({backgroundColor: "#f5f5f5"}, 300);
+	  }, 
+	  function(){
+		$(this).stop().animate({backgroundColor: "#f2f9f8"}, 300);
+	  });
+});
+
+$(document).ready(function(){
+    $('#slideshow').cycle({
+        fx:     'fade',
+        speed:  'slow',
+        timeout: 50000,
+        pager:  '#slider_nav',
+        pagerAnchorBuilder: function(idx, slide) {
+            // return sel string for existing anchor
+            return '#slider_nav li:eq(' + (idx) + ') a';
+        }
+    });
+	$('.caption').css({"opacity":0});
+	$('.slider-item').hover(function () {
+		$(this).children('div.caption').stop().animate({'opacity':0.85,'left':'75%'}, 500, function() {});
+	}, function () {
+		$(this).children('div.caption').stop().animate({'opacity':0,'left':'100%'}, 500, function() {});
+	});
+});
+
+function createCookie(name,value,days) {
+	if (days) {
+		var date = new Date();
+		date.setTime(date.getTime()+(days*24*60*60*1000));
+		var expires = "; expires="+date.toGMTString();
+	}
+	else var expires = "";
+	document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function readCookie(name) {
+	var nameEQ = name + "=";
+	var ca = document.cookie.split(';');
+	for(var i=0;i < ca.length;i++) {
+		var c = ca[i];
+		while (c.charAt(0)==' ') c = c.substring(1,c.length);
+		if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+	}
+	return null;
+}
+
+function eraseCookie(name) {
+	createCookie(name,"",-1);
+}
+
+$(function() {
+    var randomnumber=Math.floor(Math.random()*4);
+    var splash=readCookie('LOESplash');
+    var donated=readCookie('LOEDonated');
+	if (randomnumber == 1 && !(splash == "true") && !(donated == "true")) {
+		$(window).bind('load',
+			function(e) {
+				window.setTimeout(function() {
+					 $.colorbox({opacity:0.3, href:"/about/donatesmall.html"});
+				}, /*timeout->*/ 2000);
+		});
+		createCookie('LOESplash','true',60);
+	}
+});
+// ]]>
+</script>
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<!--<script async src="https://www.googletagmanager.com/gtag/js?id=UA-22034449-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'GA_TRACKING_ID');
+</script>--></head>
+<body>
+<div class="main">
+  <div class="header_resize">
+    <div class="header">
+      <div class="logo"><a href="index.html"><!--<table width="900" border="0"><tr><td width="645">--><img src="images/loenewlogo_registered.gif" width="200" height="68" border="0" alt="logo" /><!--</td><td><img src="/images/loe-pri.jpg" height="68" border="0" alt="logo"></td></tr></table>--></a></div>
+      <div class="search">
+        <form action="https://www.google.com/cse" id="cse-search-box">
+		  <input type="hidden" name="cx" value="001904507882975425872:emu-ycdr2r0" />
+          <input type="hidden" name="ie" value="UTF-8" />
+          <span>
+          <input name="q" type="text" class="keywords" id="textfield" />
+          </span>
+          <input name="sa" type="image" src="/images/search.gif" class="button" />
+        </form>      </div>
+      <div class="clr"></div>
+      <div class="menu">
+        <ul>
+          <li><a href="/index.html" class="active">Home</a></li>
+          <li><a href="/shows/thisweek.html">This Week</a></li>
+          <li><a href="/shows/">Show Archive</a></li>
+          <li><a href="/series/series.html">Special Features</a></li>
+          <li><a href="/blog/">Blogs</a></li>
+          <li><a href="/where/where.html">Stations</a></li>
+          <li><a href="/events/">Events</a></li>
+          <li><a href="/about/about.html">About Us</a></li>
+          <li><a href="/about/donate.html">Donate</a></li>
+          <li><a href="/newsletter/">Newsletter</a></li>
+                  </ul>
+      </div>      <div class="clr"></div>
+    </div>
+  </div>
+  <div class="header_blog">
+    <div class="resize">
+      <div class="galeria">
+        <ul>
+          <li><a href="https://twitter.com/livingonearth" class="thre"><img src="/images/spacer.gif" alt="picture" width="24" height="23" border="0" /></a></li>
+          <li><a href="https://www.facebook.com/pages/PRIs-Living-on-Earth/117348464962280" class="four"><img src="/images/spacer.gif" alt="picture" width="24" height="23" border="0" /></a></li>
+          <li><a href="https://www.instagram.com/livingonearthradio/" class="sek"><img src="/images/spacer.gif" alt="picture" width="24" height="23" border="0" /></a></li>
+          <li><a href="https://www.loe.org/podcast.rss" class="first"><img src="/images/spacer.gif" alt="picture" width="24" height="23" border="0" /></a></li>
+        </ul>      </div>
+      <div class="text"><strong>Public Radio's Environmental News Magazine (follow us on <a href="https://news.google.com/publications/CAAqBwgKMJWtlgswqNKtAw?hl=en-US&gl=US&ceid=US%3Aen">Google News</a>)<!--<a href="https://www.alumni.umb.edu/s/1355/boston/index.aspx?sid=1355&pgid=3862&gid=3&cid=9944&ecid=9944&post_id=0"><img src="/images/symposium_image2.jpg" align=right width=75px></a>SPECIAL ANNOUNCEMENT: Living on Earth is holding a special symposium  on our oceans and our future, and <a href="https://www.alumni.umb.edu/s/1355/boston/index.aspx?sid=1355&pgid=3862&gid=3&cid=9944&ecid=9944&post_id=0">you are invited</a>. Join host Steve Curwood, Blue Planet champion Carl Safina and UMass Boston ocean law and management expert John Duff Friday afternoon on <a href="https://www.alumni.umb.edu/s/1355/boston/index.aspx?sid=1355&pgid=3862&gid=3&cid=9944&ecid=9944&post_id=0">August 12th</a> on Nantucket Island. Please call 617-287-4122  or <a href="https://www.alumni.umb.edu/s/1355/boston/index.aspx?sid=1355&pgid=3862&gid=3&cid=9944&ecid=9944&post_id=0">click here</a> for more information.--></strong></div>
+      <div class="clr"></div>
+    </div>
+    <div id="slider">
+      <!-- start slideshow -->
+      <div id="slideshow">
+        <div class="slider-item">
+          <div class="caption">
+            <h2>Prehistoric Magnetic Flip Shook Up Life on Earth</h2>
+            <p>&nbsp;</p>
+            <p>Earth’s magnetic poles wander around and flip every now and then, and now scientists have evidence for how these flips impact life on Earth. Carolyn Gramling wrote about the research for Science News and joins Host Bobby Bascomb to talk about how a magnetic pole reversal about 41,000 years ago is linked to megafauna extinctions, climatic changes, and even a rise in ancient cave art.</p>
+            <p>&nbsp;</p>
+            <p><a href="/shows/segments.html?programID=21-P13-00013&segmentID=5">Read More »</a></p>          </div>
+          <a href="/shows/segments.html?programID=21-P13-00013&segmentID=5"><img src="/content/2021-03-26/b-KAURI-magnetic_field.jpg" class="imagehighlight" alt="Earth’s magnetic poles wander around and flip every now and then, and now scientists have evidence for how these flips impact life on Earth. Carolyn Gramling wrote about the research for Science News and joins Host Bobby Bascomb to talk about how a magnetic pole reversal about 41,000 years ago is linked to megafauna extinctions, climatic changes, and even a rise in ancient cave art."/></a> </div>
+        <div class="slider-item">
+          <div class="caption">
+            <h2>Horse of a Different Color</h2>
+            <p>&nbsp;</p>
+            <p>Living on Earth's Explorer-in-Residence Mark Seth Lender shares his appraisal of an artistic herd of zebras in Maasai Mara National Reserve in Kenya.</p>
+            <p>&nbsp;</p>
+            <p><a href="/shows/segments.html?programID=21-P13-00013&segmentID=3">Read More »</a></p>          </div>
+          <a href="/shows/segments.html?programID=21-P13-00013&segmentID=3"><img src="/content/2021-03-26/b_LENDER_herd.jpg" alt="icon" class="imagehighlight" /></a> </div>
+        <div class="slider-item">
+          <div class="caption">
+            <h2>One in Five Deaths from Fossil Fuels</h2>
+            <p>&nbsp;</p>
+            <p>Ultrafine particulate matter emitted from fossil fuel combustion is known to cause numerous health issues, and a recent study finds that this pollution is responsible for one in five early deaths worldwide, including more than 300,000 deaths a year in the United States. Pediatrician Aaron Bernstein, who is the interim director of the Center for Climate, Health and the Global Environment at Harvard, joins Host Steve Curwood to discuss the implications of the research.</p>
+            <p>&nbsp;</p>
+            <p><a href="/shows/segments.html?programID=21-P13-00012&segmentID=2">Read More »</a></p>          </div>
+          <a href="/shows/segments.html?programID=21-P13-00012&segmentID=2"><img src="/content/2021-03-19/b-FOSSILFUEL-Plant_Bowen_GA.jpeg" alt="icon" class="imagehighlight" /></a></div>
+        <div class="slider-item">
+          <div class="caption">
+            <h2>Families Sickened by Fracking</h2>
+            <p>&nbsp;</p>
+            <p>The fracking boom transformed large swaths of rural America, turning towns from idyllic to industrial, and threatening the physical and mental health of many inhabitants. In a four-part series for Environmental Health News, Kristina Marusic tested five different families for 40 different chemicals associated with fracking and found that every person studied was carrying a massive chemical body burden. She joins Host Bobby Bascomb to talk about the families whose lives have been upended by their local fracking operations. </p>
+            <p>&nbsp;</p>
+            <p><a href="/shows/segments.html?programID=21-P13-00012&segmentID=4">Read More »</a></p>          </div>
+          <a href="/shows/segments.html?programID=21-P13-00012&segmentID=4"><img src="/content/2021-03-19/b_FRACTURED_homefracking.jpeg" alt="icon" class="imagehighlight" /></a></div>
+        <div class="slider-item">
+          <div class="caption">
+            <h2>30x30 To Save Species</h2>
+            <p>&nbsp;</p>
+            <p>President Joe Biden has set an official goal of protecting 30% of US land and ocean for conservation by 2030, on the way to preserving 50% by 2050. This echoes similar pledges by dozens of governments around the globe. Brett Hartl, the Government Affairs Director for the Center for Biological Diversity, joins Host Bobby Bascomb for more.</p>
+            <p>&nbsp;</p>
+            <p><a href="/shows/segments.html?programID=21-P13-00011&segmentID=3">Read More »</a></p>          </div>
+          <a href="/shows/segments.html?programID=21-P13-00011&segmentID=3"><img src="/content/2021-03-12/b-3030_marine.jpg" alt="icon" class="imagehighlight" /></a></div>
+        <div class="slider-item">
+          <div class="caption">
+            <h2>Regenerative Farming for Soil Health</h2>
+            <p>&nbsp;</p>
+            <p>Regenerative agriculture practices that help store carbon in the soil are a “win-win-win” for farmers, the economy and the environment, say advocates who claim widespread adoption of no-till, cover cropping, and other practices could perhaps store as much carbon as the global transportation sector emits every year. Nicole Lederer, co-founder of Environmental Entrepreneurs or E2, joins Host Steve Curwood to discuss the connection between healthy soils, the climate, and the economy.</p>
+            <p>&nbsp;</p>
+            <p><a href="/shows/segments.html?programID=21-P13-00011&segmentID=5">Read More »</a></p>          </div>
+          <a href="/shows/segments.html?programID=21-P13-00011&segmentID=5"><img src="/content/2021-03-12/b-E2_Farmer.jpg" alt="icon" class="imagehighlight" /></a></div>
+        <div class="slider-item">
+          <div class="caption">
+            <h2>Baby Polar Bear Rescue</h2>
+            <p>&nbsp;</p>
+            <p>Climate Change is making life difficult for polar bears across the world. But an orphaned Alaska bear cub is about to get a new home, and a new sibling, at the Buffalo Zoo in upstate New York.</p>
+            <p>&nbsp;</p>
+            <p><a href="/shows/segments.html?programID=13-P13-00013&segmentID=6">Read More »</a></p>          </div>
+          <a href="/shows/segments.html?programID=13-P13-00013&segmentID=6"><img src="/content/2013-03-29/b-20130322-091022-2.jpg" alt="icon" class="imagehighlight" /></a></div>
+        <div class="slider-item">
+          <div class="caption">
+            <h2>Climate Departure Date</h2>
+            <p>&nbsp;</p>
+            <p>A group of scientists at the University of Hawaii have figured out a way to project when the climate at a given location will move outside the range of anything we’ve known in modern times. It’s sooner then you think.</p>
+            <p>&nbsp;</p>
+            <p><a href="/shows/segments.html?programID=13-P13-00041&segmentID=1">Read More »</a></p>          </div>
+          <a href="/shows/segments.html?programID=13-P13-00041&segmentID=1"><img src="/content/2013-10-11/b-Kapoho-Corals-Split-11.jpg" alt="icon" class="imagehighlight" /></a></div>
+        <div class="slider-item">
+          <div class="caption">
+            <h2>Hummingbirds Citizen Science Project</h2>
+            <p>&nbsp;</p>
+            <p>The Rufous hummingbird follows the Rocky Mountains to migrate from Alaska to Mexico (Photo: Diana Douglas for Hummingbirds at Home).</p>
+            <p>&nbsp;</p>
+            <p><a href="/shows/segments.html?programID=13-P13-00030&segmentID=7">Read More »</a></p>          </div>
+          <a href="/shows/segments.html?programID=13-P13-00030&segmentID=7"><img src="/content/2013-07-26/b-DianaDouglass_Rufous-Hummingbird.jpg" alt="icon" class="imagehighlight" /></a></div>
+      </div>
+      <div class="clr"></div>
+      <!-- end #slideshow -->
+      <div class="controls-center">
+        <div id="slider_controls">
+          <ul id="slider_nav">
+            <li><a href="#">9</a></li>
+            <!-- Slide 1 -->
+            <li><a href="#">8</a></li>
+            <!-- Slide 2 -->
+            <li><a href="#">7</a></li>
+            <!-- Slide 3 -->
+            <li><a href="#">6</a></li>
+            <!-- Slide 4 -->
+            <li><a href="#">5</a></li>
+            <!-- Slide 5 -->
+            <li><a href="#">4</a></li>
+            <!-- Slide 6 -->
+            <li><a href="#">3</a></li>
+            <!-- Slide 7 -->
+            <li><a href="#">2</a></li>
+            <!-- Slide 8 -->
+            <li><a href="#">1</a></li>
+            <!-- Slide 9 -->
+          </ul>
+        </div>
+        <div class="clr"></div>
+      </div>
+      <div class="clr"></div>
+    </div>
+    <div class="clr"></div>
+  </div>
+  <div class="clr"></div>
+  <div class="body">
+        <div class="body_resize">
+      <div class="blog"> <a href="/shows/segments.html?programID=21-P13-00014&segmentID=1"><img src="/content/2021-04-02/t_WINDPOWER_windmills.jpg" alt="" height="100" border="0" class="floated2" /></a>
+        <h2><a href="/shows/segments.html?programID=21-P13-00014&segmentID=1">Biden Boosts Offshore Wind</a><br />
+          </h2>
+                <div class="bg"></div>
+        <p>President Biden recently announced big plans to expand offshore wind power, with 30 gigawatts&nbsp;of offshore wind power along the U.S.&nbsp;coasts by 2030, backed up by billions in federal loan guarantees. Host Steve Curwood highlights this key part of President Biden&rsquo;s infrastructure plan and how it may&nbsp;especially help New York City meet its clean energy demands.</p>
+        <a href="/shows/segments.html?programID=21-P13-00014&segmentID=1"><img src="images/read_more.gif" alt="picture" width="87" height="31" border="0" /></a>
+      </div>
+          <div class="body_resize">
+      <div class="blog"> <a href="/shows/segments.html?programID=21-P13-00014&segmentID=2"><img src="/content/2021-04-02/t_LUBCHENCO_14countries.jpg" alt="" height="100" border="0" class="floated2" /></a>
+        <h2><a href="/shows/segments.html?programID=21-P13-00014&segmentID=2">The Ocean as Solution, Not Victim</a><br />
+          </h2>
+                <div class="bg"></div>
+        <p>The oceans are facing serious and growing threats, including climate change, overfishing, plastic pollution and more. But a group of 14 world leaders called the Ocean Panel is committing to transform the ocean from victim to solution, by sustainably managing 100% of their ocean areas by 2025. Jane Lubchenco is the Deputy Director for Climate and Environment for the White House Office of Science and Technology Policy, as well as a co-chair of the Ocean Panel Expert Group that helped ground this vision in research. She joins Host Aynsley O'Neill for more about the Ocean Panel and its vision.</p>
+        <a href="/shows/segments.html?programID=21-P13-00014&segmentID=2"><img src="images/read_more.gif" alt="picture" width="87" height="31" border="0" /></a>
+      </div>
+          <div class="body_resize">
+      <div class="blog"> <a href="/shows/segments.html?programID=21-P13-00014&segmentID=3"><img src="/content/2021-04-02/t_SALA_diver.jpg" alt="" height="100" border="0" class="floated2" /></a>
+        <h2><a href="/shows/segments.html?programID=21-P13-00014&segmentID=3">Restoring Life in the Oceans</a><br />
+          </h2>
+                <div class="bg"></div>
+        <p>Enric Sala&rsquo;s love for the ocean drew him into a career in marine biology. But as he studied marine environments across the world that have been damaged by human activity, he began to feel he was writing the &ldquo;obituary of the ocean.&rdquo; So he left academia to advocate for protecting the oceans as a National Geographic Explorer-in-Residence and the founder of their Pristine Seas program. Enric Sala talks with Host Aynsley O&rsquo;Neill about his passion for convincing decisionmakers to create marine protected areas, with stunning results for ocean biodiversity and local economies.</p>
+        <a href="/shows/segments.html?programID=21-P13-00014&segmentID=3"><img src="images/read_more.gif" alt="picture" width="87" height="31" border="0" /></a>
+      </div>
+            <div class="clr"></div>
+      <div class="bg"></div>
+      <div class="left">
+<!--<h2><a href="https://www.loe.org/series/now.html">Living on Earth Now</a></h2>
+
+-->
+
+	  <h2><a href="/shows/thisweek.html">This Week&#146;s Show</a><br />
+	  <span>April 2, 2021<br />
+	  <a href="https://www.loe.org/audio/stream.m3u?file=/content/2021-04-02/LOE_210402_WEB.mp3">listen</a> / <a href="/content/2021-04-02/LOE_210402_WEB.mp3">download</a><br />
+	  </span></h2>
+	  
+	  <audio src="/content/2021-04-02/LOE_210402_WEB.mp3" class="audio" controls preload="metadata"><embed type="application/x-shockwave-flash" src="/audio/3523697345-audio-player.swf" flashvars="audioUrl=/content/2021-04-02/LOE_210402_WEB.mp3" width="400" height="27" quality="best"></embed>
+	      </audio>	  
+	  <div class="clr"></div>
+	  <br />
+
+	  	  <a href="/shows/segments.html?programID=21-P13-00014&segmentID=1"><img src="/content/2021-04-02/t_WINDPOWER_windmills.jpg" width="175" height="175" border="0" class="floated2" /></a>
+	  <p><a href="/shows/segments.html?programID=21-P13-00014&segmentID=1"><strong>Biden Boosts Offshore Wind</strong></a><br />
+	    </a><audio src="/content/2021-04-02/LOE_210402_A1_Windpower%20Biden.mp3" class="audiosmall" controls preload="metadata"><embed type="application/x-shockwave-flash" src="/audio/3523697345-audio-player.swf" flashvars="audioUrl=/content/2021-04-02/LOE_210402_A1_Windpower%20Biden.mp3" width="300" height="27" quality="best"></embed></audio><br />	  <a href="https://loe.org/audio/stream.m3u?file=/content/2021-04-02/LOE_210402_A1_Windpower%20Biden.mp3">listen</a> / <a href="/content/2021-04-02/LOE_210402_A1_Windpower%20Biden.mp3">download</a><br />
+	    President Biden recently announced big plans to expand offshore wind power, with 30 gigawatts&nbsp;of offshore wind power along the U.S.&nbsp;coasts by 2030, backed up by billions in federal loan guarantees. Host Steve Curwood highlights this key part of President Biden&rsquo;s infrastructure plan and how it may&nbsp;especially help New York City meet its clean energy demands.</p>
+	  <div class="clr"></div>
+
+	  	  <a href="/shows/segments.html?programID=21-P13-00014&segmentID=2"><img src="/content/2021-04-02/t_LUBCHENCO_14countries.jpg" width="175" height="175" border="0" class="floated2" /></a>
+	  <p><a href="/shows/segments.html?programID=21-P13-00014&segmentID=2"><strong>The Ocean as Solution, Not Victim</strong></a><br />
+	    </a><audio src="/content/2021-04-02/LOE_210402_A2_Jane%20Lubchenco.mp3" class="audiosmall" controls preload="metadata"><embed type="application/x-shockwave-flash" src="/audio/3523697345-audio-player.swf" flashvars="audioUrl=/content/2021-04-02/LOE_210402_A2_Jane%20Lubchenco.mp3" width="300" height="27" quality="best"></embed></audio><br />	  <a href="https://loe.org/audio/stream.m3u?file=/content/2021-04-02/LOE_210402_A2_Jane%20Lubchenco.mp3">listen</a> / <a href="/content/2021-04-02/LOE_210402_A2_Jane%20Lubchenco.mp3">download</a><br />
+	    The oceans are facing serious and growing threats, including climate change, overfishing, plastic pollution and more. But a group of 14 world leaders called the Ocean Panel is committing to transform the ocean from victim to solution, by sustainably managing 100% of their ocean areas by 2025. Jane Lubchenco is the Deputy Director for Climate and Environment for the White House Office of Science and Technology Policy, as well as a co-chair of the Ocean Panel Expert Group that helped ground this vision in research. She joins Host Aynsley O'Neill for more about the Ocean Panel and its vision.</p>
+	  <div class="clr"></div>
+
+	  	  <a href="/shows/segments.html?programID=21-P13-00014&segmentID=3"><img src="/content/2021-04-02/t_SALA_diver.jpg" width="175" height="175" border="0" class="floated2" /></a>
+	  <p><a href="/shows/segments.html?programID=21-P13-00014&segmentID=3"><strong>Restoring Life in the Oceans</strong></a><br />
+	    </a><audio src="/content/2021-04-02/LOE_210402_B1_Marine%20Protected%20Areas%20Part%201&2.mp3" class="audiosmall" controls preload="metadata"><embed type="application/x-shockwave-flash" src="/audio/3523697345-audio-player.swf" flashvars="audioUrl=/content/2021-04-02/LOE_210402_B1_Marine%20Protected%20Areas%20Part%201&2.mp3" width="300" height="27" quality="best"></embed></audio><br />	  <a href="https://loe.org/audio/stream.m3u?file=/content/2021-04-02/LOE_210402_B1_Marine%20Protected%20Areas%20Part%201&2.mp3">listen</a> / <a href="/content/2021-04-02/LOE_210402_B1_Marine%20Protected%20Areas%20Part%201&2.mp3">download</a><br />
+	    Enric Sala&rsquo;s love for the ocean drew him into a career in marine biology. But as he studied marine environments across the world that have been damaged by human activity, he began to feel he was writing the &ldquo;obituary of the ocean.&rdquo; So he left academia to advocate for protecting the oceans as a National Geographic Explorer-in-Residence and the founder of their Pristine Seas program. Enric Sala talks with Host Aynsley O&rsquo;Neill about his passion for convincing decisionmakers to create marine protected areas, with stunning results for ocean biodiversity and local economies.</p>
+	  <div class="clr"></div>
+
+	  	  <a href="/shows/segments.html?programID=21-P13-00014&segmentID=4"><img src="/content/2021-04-02/t_DYKSTRA_containership.jpg" width="175" height="175" border="0" class="floated2" /></a>
+	  <p><a href="/shows/segments.html?programID=21-P13-00014&segmentID=4"><strong>Beyond the Headlines</strong></a><br />
+	    </a><audio src="/content/2021-04-02/LOE_210402_B3_Dykstra.mp3" class="audiosmall" controls preload="metadata"><embed type="application/x-shockwave-flash" src="/audio/3523697345-audio-player.swf" flashvars="audioUrl=/content/2021-04-02/LOE_210402_B3_Dykstra.mp3" width="300" height="27" quality="best"></embed></audio><br />	  <a href="https://loe.org/audio/stream.m3u?file=/content/2021-04-02/LOE_210402_B3_Dykstra.mp3">listen</a> / <a href="/content/2021-04-02/LOE_210402_B3_Dykstra.mp3">download</a><br />
+	    In this week's Beyond the Headlines segment, Environmental Health News Editor Peter Dykstra and Host Steve Curwood discuss why there was enormous natural gas flaring in the midst of the crippling power outages this February in Texas. Next, they look at how California has saved lives over the last three decades by reducing diesel emissions by 78%. Finally, they travel back to 1815, the year Mount Tambora in Indonesia erupted, circling the world in smoke and ash, resulting in what was later called &ldquo;the year without a summer.&rdquo;</p>
+	  <div class="clr"></div>
+
+	  	  <a href="/shows/segments.html?programID=21-P13-00014&segmentID=5"><img src="/content/2021-04-02/t_WEISHAN_bellpeppers.jpg" width="175" height="175" border="0" class="floated2" /></a>
+	  <p><a href="/shows/segments.html?programID=21-P13-00014&segmentID=5"><strong>Tips for the Casual Gardener</strong></a><br />
+	    </a><audio src="/content/2021-04-02/LOE_210402_C1_Weishan.mp3" class="audiosmall" controls preload="metadata"><embed type="application/x-shockwave-flash" src="/audio/3523697345-audio-player.swf" flashvars="audioUrl=/content/2021-04-02/LOE_210402_C1_Weishan.mp3" width="300" height="27" quality="best"></embed></audio><br />	  <a href="https://loe.org/audio/stream.m3u?file=/content/2021-04-02/LOE_210402_C1_Weishan.mp3">listen</a> / <a href="/content/2021-04-02/LOE_210402_C1_Weishan.mp3">download</a><br />
+	    Spring is the perfect time to start gardening and growing your favorite fresh produce doesn&rsquo;t have to feel like a chore. Landscape designer Michael Weishan, former host of The Victory Garden, joins Host Steve Curwood to discuss how to work smarter, not harder when growing herbs and vegetables.&nbsp;</p>
+	  <div class="clr"></div>
+
+	  
+	  <br />
+        <h2>Special Features</h2>
+
+<p><a href="/blog/blogs.html?seriesID=65&blogID=37"><img src="/content/2021-03-26/t-MSL-Zebra_Herd.jpg" alt="" width="100" border="0" class="floated2" /></a><strong><a href="/blog/blogs.html?seriesID=65&blogID=37">Field Note: Horse of a Different Color</a> </strong><br>Why do zebra and wildebeest often herd together in a "Razzle-Dazzle" of stripes? Living on Earth's Explorer-in-Residence Mark Seth Lender ponders and shares his insights.<br><small><strong>Blog Series:</strong> <a href="/blog/series.html?seriesID=65">Mark Seth Lender Field Notes</a></small></p>
+<div class="clr"></div>
+
+
+<p><a href="/blog/blogs.html?seriesID=65&blogID=36"><img src="/content/2021-02-12/t-MSLBLOG-Flukes.jpg" alt="" width="100" border="0" class="floated2" /></a><strong><a href="/blog/blogs.html?seriesID=65&blogID=36">Field Note: Bottlenose Whales in the Arctic</a> </strong><br>Living on Earth's Explorer-in Residence Mark Seth Lender ponders the big questions that might be shared by species beyond our own.<br><small><strong>Blog Series:</strong> <a href="/blog/series.html?seriesID=65">Mark Seth Lender Field Notes</a></small></p>
+<div class="clr"></div>
+
+	  <br />
+	  <!--<h2>Special features</h2>
+        <p><a href="/features/nukes.html"><img src="https://loe.org/features/img/nukes.jpg" alt="" height="100" width="100" border="0" class="floated2" /></a><strong><a href="/features/nukes.html">Nuclear Fuel: Waste Not, Want Not</a></strong><br />President Obama wants more nukes, but where will the waste go? </p>
+        <div class="clr"></div>
+        <p><a href="/features/redd.html"><img src="https://loe.org/features/img/field2.jpg" alt="" height="100" width="100" border="0" class="floated2" /></a><strong><a href="/features/redd.html">REDD Path to a Green Planet</a></strong><br />Preserving the world's forests to reduce the threat of climate change from deforestation. </p>
+        <div class="clr"></div>
+        <p><a href="/shows/shows.html?programID=05-P13-00026"><img src="https://loe.org/features/img/wangariFeature.jpg" alt="" height="100" width="100" border="0" class="floated2" /></a><strong><a href="/shows/shows.html?programID=05-P13-00026">A Watering Can, Some Seedlings, and the Greening of a Nation</a></strong><br />The story of Nobel Prize Peace winner Wangari Maathai. </p>
+        <div class="clr"></div>
+        <p><a href="/features/coal.html"><img src="https://loe.org/features/img/coal.jpg" alt="" height="100" width="100" border="0" class="floated2" /></a><strong><a href="/features/coal.html">Generating Controversy:  The Changing Climate of Coal</a></strong><br />The problems and promise of coal, and the potential of new technologies. </p>
+        <div class="clr"></div>
+        <p><a href="/series/earlysigns.html"><img src="/images/content/earlysignsthumb.gif" alt="" height="100" width="100" border="0" class="floated2" /></a><strong><a href="/series/earlysigns.html">Early Signs- Reports From A Warming Planet</a></strong><br />How climate change is affecting communities around the world. </p>
+        <div class="clr"></div>
+        <p><a href="/series/fusion.html"><img src="/images/content/fusionspecialthumb.gif" alt="" height="100" width="100" border="0" class="floated2" /></a><strong><a href="/series/fusion.html">Fusion or Illusion?</a></strong><br />A look at the promise of fusion energy. </p>
+        <div class="clr"></div>
+        <p><a href="/series/lead2003/"><img src="https://loe.org/features/img/secret_life_lead.jpg" alt="" height="100" width="100" border="0" class="floated2" /></a><strong><a href="/series/lead2003/">The Secret Life of Lead</a></strong><br />A twenty year study looks at the effects of childhood lead exposure. </p>
+        <div class="clr"></div>-->
+        
+      </div>
+      <div class="right">
+        <!-- Begin Mailchimp Signup Form -->
+<link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
+/* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+  We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+</style>
+<div id="mc_embed_signup">
+<form action="https://loe.us3.list-manage.com/subscribe/post?u=9f9ebdcfa232a532a7e70746b&amp;id=2383d76cae" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+    <div id="mc_embed_signup_scroll">
+<h2>Feed Your Eco-Curiosity with Living on Earth's Weekly Newsletter</h2>
+<div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+<div class="mc-field-group">
+<label for="mce-FNAME">First Name </label>
+<input type="text" value="" name="FNAME" class="" id="mce-FNAME">
+</div>
+<div class="mc-field-group">
+<label for="mce-LNAME">Last Name </label>
+<input type="text" value="" name="LNAME" class="" id="mce-LNAME">
+</div>
+<div class="mc-field-group">
+<label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
+</label>
+<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+</div>
+<div id="mce-responses" class="clear">
+<div class="response" id="mce-error-response" style="display:none"></div>
+<div class="response" id="mce-success-response" style="display:none"></div>
+</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_9f9ebdcfa232a532a7e70746b_2383d76cae" tabindex="-1" value=""></div>
+    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+    </div>
+</form>
+</div>
+<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[0]='EMAIL';ftypes[0]='email';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';fnames[6]='DONORID';ftypes[6]='text';fnames[7]='MMERGE7';ftypes[7]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+<!--End mc_embed_signup-->        <!--<h2>The LOE Newsletter</h2>
+          <p><center>LOE's show rundown and exclusive original content in your inbox, sent weekly.<form method="post" action="http://scripts.dreamhost.com/add_list.cgi">
+    <input type="hidden" name="list" value="newsletter@loe.org" />
+    <input type="hidden" name="domain" value="loe.org" />
+    <input type="hidden" name="url" value="" />
+    <input type="hidden" name="unsuburl" value="" />
+    <input type="hidden" name="alreadyonurl" value="" />
+    <input type="hidden" name="notonurl" value="" />
+    <input type="hidden" name="invalidurl" value="" />
+    <input type="hidden" name="emailconfirmurl" value="" />
+    <input type="hidden" name="emailit" value="1" /></center>
+    <p><center>Name: <input name="name" /><br />
+    &nbsp;<br />
+    E-mail: <input name="email" /><br /></center></p>
+<center><input type="submit" name="submit" value="Sign Up!" /></center>
+</form></p>-->
+        <!--<h2>Testimonials</h2>-->
+        <img src="/images/quotation.gif" alt="picture" width="28" height="20" class="floated2" />
+        <p> <em>...Ultimately, if we are going prevent large parts of this Earth from becoming not only inhospitable but uninhabitable in our lifetimes, we are going to have to keep some fossil fuels in the ground rather than burn them... </em></p>
+        <p><em><strong>-- <a href="http://www.c-span.org/video/?400414-1/president-obama-statement-keystone-xl-pipeline">President Barack Obama, November 6, 2015 on why he declined to approve the Keystone XL Pipeline.</a></strong></em></p>
+        <p><strong><a href="/about/donate.html">Donate to Living on Earth!</a></strong><br />Living on Earth is an independent media program and relies entirely on contributions from listeners and institutions supporting public service. Please <a href="/about/donate.html">donate now</a> to preserve an independent environmental voice.</p>
+<p><strong><a href="/newsletter">Newsletter</a></strong></br />Living on Earth offers a <a href="/newsletter">weekly delivery</a> of the show's rundown to your mailbox. Sign up for our <a href="/newsletter">newsletter</a> today!
+<!--<p><strong><a href="/community">Experimental</a></strong></br />We have a new <a href="/community">community section</a>. <a href="mailto:webmaster@loe.org">Tell us</a> what you think!-->
+        <p><img src="/images/logos/sailors_logo_lg.png" alt="" height="75" border="0" class="floated2" /><a href="https://www.sailorsforthesea.org">Sailors For The Sea</a>: Be the change you want to sea.</p>
+        <!--<p><img src="/images/nsf1.jpg" alt="" height="75" border="0" class="floated2" />Major funding for Living on Earth is provided by the National Science Foundation.</p>-->
+        <div class="clr"></div>
+        <p><a href="https://www.moore.org"><img src="https://loe.org/images/logos/logo-light.png" alt="" width="123" border="0" class="floated" /></a>Creating positive outcomes for future generations.</p>
+        <!--<div class="clr"></div>
+        <p><a href="https://stonyfieldfarm.com"><img src="https://loe.org/images/logos/stonyfield_logo.png" alt="" width="123" border="0" class="floated" /></a>Committed to healthy food, healthy people, a healthy planet, and healthy business.</p>-->
+        <div class="clr"></div>
+        <p><a href="https://www.utc.com/Pages/Home.aspx"><img src="https://loe.org/images/logos/UTC_stacked_300dpi.jpg" alt="" width="123" border="0" class="floated2" /></a>Innovating to make the world a better, more sustainable place to live. <a href="http://naturalleader.com/race-9-billion/">Listen to the race to 9 billion</a></p>
+        <div class="clr"></div>
+        <!--<div class="clr"></div>
+        <p><img src="https://loe.org/images/paxlogo.jpg" alt="" width="123" border="0" class="floated" />Socially and environmentally sustainable investing.<br> <a href="https://www.paxworld.com/" target="_blank">Pax World</a>. For Tomorrow.</p>-->
+        <!--<div class="clr"></div>
+        <p><a href="https://www.sierraclub.org/livingonearth"><img src="/images/logos/sierra_horiz_125x58_Web.gif" alt="" height="75" border="0" class="floated2" /></a>Explore, enjoy and protect the planet. The <a href="https://www.sierraclub.org/livingonearth">Sierra Club</a>.</p>-->
+        <!--<div class="clr"></div>
+        <p><a href="https://www.breckinridge.com/" target="_blank"><img src="/images/logos/Breckinridge-logo.gif" alt="" border="0" class="floated" /></a>Applying a sustainable approach to fixed income investing.</p>
+        <div class="clr"></div>-->
+        <!--<p><img src="/images/logos/kendeda_logo_small.gif" alt="" height="60" border="0" class="floated" />Kendeda Fund, furthering the values that contribute to a healthy planet.</p>-->
+        <p><img src="https://loe.org/images/logos/GranthamFoundationLogo.jpg" alt="" width="123" border="0" class="floated" /><a href="https://www.granthamfoundation.org">The Grantham Foundation</a> for the Protection of the Environment: Committed to protecting and improving the health of the global environment.</p>
+        <p><a href="https://ef.org/" target="_blank"><img src="/images/logos/ef_logo.jpg" alt="" border="0" width="123" class="floated2" />Energy Foundation</a>: Serving the public interest by helping to build a strong, clean energy economy.</p>
+        <div class="clr"></div>
+        <!--<p><a href="https://myplanetharmony.com/"><img src="/images/3rr_logo.png" target="_new" border="0"></a></p>
+        <div class="clr"></div>-->
+        <p><a href="http://marksethlender.com/donate-to-living-on-earth/"><img src="/images/promo/Elephant-family-thumbnail.jpg" class="floated2" width=150 height=150 border=0></a><a href="http://marksethlender.com/make-a-donation/">Contribute</a> to Living on Earth and receive, as our gift to you, an archival print of one of Mark Seth Lender's <a href="http://marksethlender.com/make-a-donation/">extraordinary wildlife photographs</a>. Follow the link to see Mark's current collection of photographs.</p>
+        <p><a href="https://www.smeagulltheseagull.com/pri"><img src="/images/promo/Smeagull-thumbnail.jpg" class="floated" width=150 height=150 border=0></a>Buy a signed copy of Mark Seth Lender's book <i><a href="https://www.smeagulltheseagull.com/pri">Smeagull the Seagull</a></i> & support Living on Earth
+      </div>
+      <div class="clr"></div>
+    </div>
+  </div>
+  <div class="clr"></div>
+  <div class="footer">
+    <div class="footer_resize">
+      <p class="leftt">&copy; Copyright World Media Foundation. All Rights Reserved<br />
+        <a href="/">Home</a> | <a href="/about/contact.html">Contact</a> | <a href="/podcast.rss">RSS</a> | <a href="/about/donate.html">Donate</a> | <a href="/newsletter">Newsletter</a></p>
+      <p class="right"><a href="https://www.pri.org/" target="_new"><img src="/images/logos/PRX_Marks_Full_Color_Horizontal.png" height="66" alt="PRI" border="0"><!--<img src="/images/pributton.gif" width="66" alt="PRI" border="0">--></a></p>      <div class="clr"></div>
+    </div>
+    <div class="clr"></div>
+  </div>
+</div>
+</body>
+</html>
